@@ -12,35 +12,56 @@
     ></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="dark-mode">
     <div class="wrapper">
       <header>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="YMax slice"><path fill="#0099ff" fill-opacity="1" d="M0,160L34.3,170.7C68.6,181,137,203,206,224C274.3,245,343,267,411,277.3C480,288,549,288,617,288C685.7,288,754,288,823,266.7C891.4,245,960,203,1029,192C1097.1,181,1166,203,1234,229.3C1302.9,256,1371,288,1406,304L1440,320L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z" data-darkreader-inline-fill="" ></path></svg>
         <div class="content">
           <div class="title">My name is <b> Kurtis </b></div>
+          <button id="theme-switch"> Dark/Light </button>
           <div class="subtitle">I'm carrying the wheel</div>
           <br />  
         </div>
       </header>
+
+      <div class="segment"></div>
+
+
       <div class="about">
-        <div class="head">
-          I'm an aspiring <span class="highlight">full stack developer</span>
+        <div class="about-description">
+          <ul>
+            <li>Aspiring <span class="highlight">full stack developer</span></li>
+            <li>Proficient  </li>
+            <li>Aspiring <span class="highlight">full stack developer</span></li>
+          </ul>
+          
+        </div>
+        <div class="about-skills-header">
+          <h2> Skills </h2>
+          <div class="about-skills-list">
+              <img src="https://via.placeholder.com/150">
+              <img src="https://via.placeholder.com/150">
+              <img src="https://via.placeholder.com/150">
+              <img src="https://via.placeholder.com/150">
+              <img src="https://via.placeholder.com/150">
+              <img src="https://via.placeholder.com/150">
+          </div>
         </div>
 
-        <p>
-          I spend my time building new websites and projects, while
-          experimenting with new frameworks and applications. I am far from an
-          expert, but I believe practice makes perfect.
-        </p>
       </div>
-      <div class="portfolio">
-        <h2>Portfolio section</h2>
-        <div class="content" id="cards"></div>
+      <div class="portfolio" id="cards">
       </div>
       <div class="contact">
         <div class="content" id="hello">
-          <h1>Contact Section</h1>
+          <a href="#"> Github </a>
+          <a href="#"> LinkedIn </a>
+          <a href="#"> Email </a>
+          <a href="#"> Twitter </a>
+
         </div>
       </div>
       <footer>

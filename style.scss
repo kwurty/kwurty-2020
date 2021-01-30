@@ -1,17 +1,43 @@
+$black: #1D1F20;
+$white: #DEDEE1;
+$orange: #E4572E;
+$teal: #508484;
+
 * {
   padding: 0;
   margin: 0;
 }
+html {
+  scroll-behavior: smooth;
+  --maxWidth: 1600px;
+  --gap: 3rem;
+  scrollbar-color: #666 #201c29;
+  background: $black;
+  color: $white;
+  overflow-x: hidden;
+}
+
+$min-width: 20rem;
 body {
-  color: #141823;
-  .wrapper {
+  color: $black;
+  background-color:$white;
+  transition-property: color background-color;
+  transition-duration: .5s;
+
+  &:after {
+    background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
+  }
+  &.dark-mode {
+    color: $white;
+    background-color: $black;
+   }
     max-width: 95vw;
     min-width: 480px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+
     header {
-      background-color: #fff;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -19,31 +45,141 @@ body {
       width: 100%;
       font-family: "Raleway", sans-serif;
 
+      svg {
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
       .title {
         width: 100%;
         text-align: center;
         font-size: 5rem;
+        z-index: 1;
       }
       .subtitle {
         width: 100%;
         text-align: center;
         font-size: 1.1rem;
+        font-family: 'Lato', sans-serif;
+
       }
     }
+    
+    
+    
     .portfolio {
-      .content {
+      max-width: 65%;
+      margin: 0 auto;
+      padding-top: 10rem;
+
+      .project {
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
-        .card {
-          display: inline-block;
-          margin: 10px 0 0 2%;
-          flex-grow: 1;
-          height: 300px;
-          width: calc(100% * (1 / 5) - 10px - 1px);
+        margin-top: -1em; // 1
+        margin-left: -3.5em; // 1
+        align-items: center;
+        
+        &:not(:first-of-type) {
+          margin-top: 3em; // 2
+        }
+        
+        &:nth-child(even) {
+          flex-direction: row-reverse; // 3
+        }
+        
+        &__item {
+          width: 100%;
+          padding-top: 1em; // 1
+          padding-left: 6.5em; // 1
+          
+          &--body {
+            flex-grow: 9999; // 4
+            flex-basis: $min-width; // 5
+
+            font-family: 'Lato', sans-serif;
+
+            i {
+              padding-right: 1rem;
+            color: #587792;
+            }
+
+            h2{ 
+              font-family: "Raleway", sans-serif;
+            }
+          }
+          
+          &--figure {
+            margin-right: auto; // 6
+            padding-right: 6.5rem;
+            flex-grow: 1; // 7
+            
+            img {
+              width: 500px;
+              height: 500px;
+            }
+            // By using `max-content` we can get a little
+            // nicer responsive behavior because the image
+            // automatically shrinks if not enough space is
+            // available, but also the column is not getting
+            // to large than the image if a lot of space
+            // is available.
+            @supports (max-width: max-content) {
+              min-width: $min-width; // 5
+              max-width: max-content;
+              flex-basis: $min-width; // 5
+              flex-grow: 99999;
+            }
+          }
         }
       }
     }
+
+   
+
+    .about {
+      text-align: center;
+
+      .about-description {
+        font-family: 'Lato', sans-serif;
+        margin-bottom: 2rem;
+      }
+
+      .about-skills-header{
+        h2{
+            font-family: "Raleway", sans-serif;
+        }
+      }
+      .about-skills-list{
+
+      }
+    }
+
+
+    .contact {
+      .content {
+        width: 100%;
+        text-align: center;
+        padding-top: 10rem;
+        padding-bottom: 5rem;
+        a {
+          color: rgb(211, 207, 202);
+          text-decoration: none;
+          margin-left: 5rem;
+          margin-right: 5rem;
+          margin-bottom: 5rem;
+          font-size: 1.2rem;
+          font-family: "Raleway", sans-serif;
+          &:hover {
+            color: red;
+          }
+        }
+      }
+    }
+
+    footer {
+
+    }
+
   }
-}

@@ -79,24 +79,28 @@ projects.forEach(project => {
         tools += `<i class="fab fa-${tool} fa-3x"></i>`
     })
     let html = `
-        <div class="card" style="background-image: url(${project.image})">
-            <div class="card-overlay-text">
-            ${project.name} 
-            </div>
-            <div class="card-overlay-subtext">
+        <div class="project">
+        <div class="project__item project__item--body">
+        <h2>${project.name}</h2>
+        <p>
             ${project.description}
-            </div>
-            <div class="card-overlay-tools">
-            <ul>
-            ${tools}
-            </ul>
-            <br>
-            <div class="card-overlay-buttons">
-            <a class="button-large href=${project.url}> View </a>
-            <a class="button-large href=${project.github}> GitHub </a>
-            </div>
-            </div>
+        </p>
+        <p>
+        ${tools}
+        </p>
         </div>
+        <div class="project__item project__item--figure">
+        <img src="${project.image}" alt="">
+        </div>
+    </div>
     `
     cards.innerHTML += html;
+})
+
+const btn = document.getElementById("theme-switch")
+
+// Listen for a click on the button
+btn.addEventListener('click', function() {
+  // Then toggle (add/remove) the .dark-theme class to the body
+  document.body.classList.toggle('dark-mode');
 })
