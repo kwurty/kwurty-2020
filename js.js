@@ -35,7 +35,7 @@ const projects = [
             "node-js"
         ],
         description: "Create playlists based on artists rather than their songs. Keep track of the artists you like based on your mood, genre, or anything you want! Built with VueJS, ExpressJS, MongoDB, and the Spotify API. ",
-        image: "./img/codewars.png",
+        image: "./img/spotify.png",
         github: 'https://github.com/kwurty/artist-organizer',
         url: '#'
     },
