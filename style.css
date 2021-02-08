@@ -1,6 +1,8 @@
 * {
   padding: 0;
   margin: 0;
+  transition-property: color background-color;
+  transition-duration: 0.3s;
 }
 
 html {
@@ -16,9 +18,7 @@ html {
 body {
   color: #1D1F20;
   background-color: #DEDEE1;
-  transition-property: color background-color;
-  transition-duration: 0.5s;
-  max-width: 95vw;
+  max-width: 100vw;
   min-width: 480px;
   display: flex;
   flex-direction: column;
@@ -31,32 +31,176 @@ body.dark-mode {
   color: #DEDEE1;
   background-color: #1D1F20;
 }
+body.dark-mode header {
+  background: #02001b;
+  background: linear-gradient(180deg, #575666 24%, #28289c 72%, #00a1bb 100%);
+}
+body.dark-mode header .waves {
+  z-index: 2;
+  position: absolute;
+  bottom: -10px;
+}
+body.dark-mode header .waves svg {
+  overflow: hidden;
+}
+body.dark-mode header .waves #first-hill {
+  fill: #1d2b00;
+}
+body.dark-mode header .waves #second-hill {
+  fill: #32460b;
+}
+body.dark-mode header .waves #third-hill {
+  fill: #728f3d;
+}
+body.dark-mode header .waves #fourth-hill {
+  fill: #94a06c;
+}
+body.dark-mode .about .about-skills-header .skill i {
+  color: #E4572E;
+}
+body.dark-mode .portfolio .project i {
+  color: #E4572E;
+}
+body.dark-mode .contact .content a {
+  color: #DEDEE1;
+}
 body header {
   height: 100vh;
+  background: #1FA2FF;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #A6FFCB, #12D8FA, #1FA2FF);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #A6FFCB, #12D8FA, #1FA2FF);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   font-family: "Raleway", sans-serif;
+  /* The slider */
 }
-body header svg {
-  width: 100%;
-  display: block;
+body header canvas {
   position: absolute;
+  overflow: visible;
+  z-index: 1;
+}
+body header .sky-item {
+  z-index: 2;
+}
+body header .sky-item img {
+  position: absolute;
+  bottom: 0;
+  right: 7%;
+  height: 200px;
+  width: auto;
+  visibility: hidden;
+  z-index: 3;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.29, 1.6, 1.4, -0.4);
+}
+body header .sky-item .visible {
+  visibility: visible;
+  transform: translateY(-70vh);
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.29, 1.6, 1.4, -0.31);
+}
+body header .waves {
+  z-index: 2;
+  position: absolute;
+  bottom: -10px;
+}
+body header .waves svg {
+  overflow: hidden;
+}
+body header .waves #first-hill {
+  fill: #4E7500;
+}
+body header .waves #second-hill {
+  fill: #85B720;
+}
+body header .waves #third-hill {
+  fill: #BEEE64;
+}
+body header .waves #fourth-hill {
+  fill: #EBFFA8;
+}
+body header .content {
+  height: 100%;
+  margin: auto;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
 }
-body header .title {
+body header .content .title {
+  z-index: 10;
   width: 100%;
   text-align: center;
   font-size: 5rem;
-  z-index: 1;
 }
-body header .subtitle {
+body header .content .subtitle {
   width: 100%;
   text-align: center;
   font-size: 1.1rem;
   font-family: "Lato", sans-serif;
+}
+body header .switch {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  z-index: 7;
+}
+body header .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+body header .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1D1F20;
+  border-radius: 34px;
+  top: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+body header .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #DEDEE1;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+body header input:checked + .slider {
+  background-color: #E4572E;
+}
+body header input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+body header input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 body .portfolio {
   max-width: 65%;
@@ -75,6 +219,7 @@ body .portfolio .project:not(:first-of-type) {
 }
 body .portfolio .project:nth-child(even) {
   flex-direction: row-reverse;
+  margin-left: 6;
 }
 body .portfolio .project__item {
   width: 100%;
@@ -88,7 +233,7 @@ body .portfolio .project__item--body {
 }
 body .portfolio .project__item--body i {
   padding-right: 1rem;
-  color: #587792;
+  color: #508484;
 }
 body .portfolio .project__item--body h2 {
   font-family: "Raleway", sans-serif;
@@ -99,8 +244,8 @@ body .portfolio .project__item--figure {
   flex-grow: 1;
 }
 body .portfolio .project__item--figure img {
-  width: 500px;
-  height: 500px;
+  min-width: 500px;
+  max-height: 500px;
 }
 @supports (max-width: max-content) {
   body .portfolio .project__item--figure {
@@ -112,13 +257,42 @@ body .portfolio .project__item--figure img {
 }
 body .about {
   text-align: center;
+  margin: 3% 0 0% 0;
 }
 body .about .about-description {
   font-family: "Lato", sans-serif;
   margin-bottom: 2rem;
 }
+body .about .about-description ul {
+  list-style: none;
+}
+body .about .about-description li {
+  margin: 0.5rem 0 0.5rem 0;
+}
 body .about .about-skills-header h2 {
   font-family: "Raleway", sans-serif;
+  margin: 0 0 1rem 0;
+}
+body .about .about-skills-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body .about .about-skills-list i {
+  margin: 2rem 2rem 0rem 2rem;
+  font-size: 4em;
+  color: #508484;
+}
+body .about .about-skills-list .skill {
+  display: flex;
+  flex-direction: column;
+}
+body .about .about-skills-list .skill label {
+  text-transform: lowercase;
+  font-size: 0.75rem;
+  font-family: "Lato", sans-serif;
 }
 body .contact .content {
   width: 100%;
@@ -127,7 +301,7 @@ body .contact .content {
   padding-bottom: 5rem;
 }
 body .contact .content a {
-  color: #d3cfca;
+  color: #1D1F20;
   text-decoration: none;
   margin-left: 5rem;
   margin-right: 5rem;
@@ -136,7 +310,10 @@ body .contact .content a {
   font-family: "Raleway", sans-serif;
 }
 body .contact .content a:hover {
-  color: red;
+  color: #E4572E;
+}
+body .contact .content a {
+  color: #1D1F20;
 }
 
 /*# sourceMappingURL=style.css.map */
