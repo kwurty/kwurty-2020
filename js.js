@@ -24,7 +24,7 @@ const projects = [
         ],
         description: "Simple web application to find what games you and your friends have in common on Steam. Built using VueJS, ExpressJS, and the Steam API",
         image: "./img/steam.png",
-        github: 'https://github.com',
+        github: 'https://github.com/kwurty/steamfriends',
         url: '#'
     },
     {
@@ -49,8 +49,8 @@ const projects = [
         ],
         description: "My portfolio built to house my projects. Built with simple HTML, Javascript, and SASS.",
         image: "./img/portfolio.png",
-        github: 'https://github.com',
-        url: '#'
+        github: 'https://github.com/kwurty/kwurty-2020',
+        url: 'https://kwurty.com'
     },
     {
         id: 4,
@@ -58,8 +58,10 @@ const projects = [
         tools: [
             "vuejs"
         ],
+        image: './img/stocks.png',
         description: "A final project done for a VueJS course. A simple stock game where you buy/sell stocks.",
-        url: '#'
+        url: 'https://kwurty.github.io/vuejs-final-project/',
+        github: 'https://github.com/kwurty/vuejs-final-project'
     }
 ]
 
@@ -79,8 +81,8 @@ projects.forEach(project => {
         ${tools}
         </p>
         <p>
-        <button> GitHub </button>
-        <button> Demo </button>
+        <button class="btn github"> GitHub </button>
+        <button class="btn demo"> Demo </button>
         </p>
         </div>
         <div class="project__item project__item--figure">
