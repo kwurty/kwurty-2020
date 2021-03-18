@@ -1,0 +1,149 @@
+$black: #1D1F20;
+$white: #ebebeb;
+$orange: #E4572E;
+$teal: #508484;
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    scroll-behavior: smooth;
+    background-color: $white;
+    color: $black;
+    font-family: "Raleway", sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    align-items: center;
+    padding-bottom: 2rem;
+    a{
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        li {
+            padding: 1rem .3rem 1rem;
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: 'Oswald', sans-serif;
+                &:hover {
+                    
+                color: $orange;
+                }
+            }
+        }
+    }
+}
+
+.wrapper {
+    width: 100vw;
+    .portfolio {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .project {
+            // margin: 0 .2rem 0 .2rem;
+            display: block;
+            height: 40vh;
+            position: relative;
+            box-sizing: border-box;
+            float: none;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            max-width: none;
+            max-height: 300px;
+            max-width: 500px;
+            flex-grow: 1;
+
+            &:last-child {
+                max-width: 100%;
+                flex-grow: 10;
+            }
+
+            img {
+                height: auto;
+                width: 100%;
+                display: block;
+                overflow: hidden;
+                object-fit: inherit;
+            }
+            
+            a {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                text-decoration: none;
+
+                .title {
+                    // background: transparent url('./img/circle.svg') no-repeat 50% 50%/100px auto;
+                    background: transparent;
+                    svg {
+                        background: transparent;
+                        margin: 0 auto;
+                        position: absolute;
+                        z-index: -2;
+                        circle {
+                            fill: $orange;
+                            stroke: none;
+                        }
+
+                        .svg-title {
+                            fill: $white;
+                            text-anchor: middle;
+                            font-size: 500;
+                            font-family: 'Oswald', sans-serif;
+                        }
+                    }
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    backface-visibility: hidden;
+                    width: 100%;
+                    height: 100%;
+                    transition: transform 125ms ease-out;
+                    transform: perspective(150px) rotateX(0deg) rotateY(0deg);
+                    
+                    .text{
+                        background: transparent;
+                        justify-content: center;
+                        text-transform: uppercase;
+                        font-family: 'Oswald', sans-serif;
+                        line-height: 20px;
+                    }
+                }
+
+                &:hover {
+
+                    .title {
+                        transition: transform 125ms ease-out;
+                        transform: perspective(150px) rotateX(0deg) rotateY(90deg);
+                        .text {
+                        }
+                    }
+                }
+            }
+            
+                        @media (max-width: 500px) {
+                            background: rgba(0, 255, 0);
+                        }
+                        @media screen {
+                            
+                        }
+        }
+    }
+}

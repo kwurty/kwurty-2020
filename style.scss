@@ -341,6 +341,7 @@ body {
           img {
             min-width: 500px;
             max-height: 500px;
+            overflow: hidden;
           }
 
           // By using `max-content` we can get a little
